@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "agent-sync-sonder",
+    "production": "agent-sync-sonderworks"
+  }
+}

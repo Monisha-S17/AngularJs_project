@@ -1,0 +1,67 @@
+<app-navbar></app-navbar>
+<div class="row text-center">
+  <div class="col-md-6 col-6 mx-auto" >
+    <div class="mb-4" *ngIf="(profile | async)?.url === empty ; else templateName"><img src='https://firebasestorage.googleapis.com/v0/b/agent-sync-sonderworks.appspot.com/o/userprofile%2Fuser.jpg?alt=media&token=d3b47a22-a861-4c7a-9104-bef874ea39bf'
+      class="img-thumbnail img-fluid"></div>
+      <ng-template #templateName>
+        <img [src]="(profile | async)?.url" class=" img-fluid">
+    </ng-template>
+       
+<div class="image-upload">
+    <label for="file-input">
+       <i class="fa fa-edit custom-edit mx-auto"></i>
+    </label>
+  
+    <input id="file-input" type="file" single=true (change)="upload($event)"  name="file-input" accept=".png,.jpg">
+    
+  
+</div>
+
+    </div>
+    <div class="col-md-12"> 
+      
+          <div class="form-inline my-3">
+                  <label for="example-text-input" class="col-4 ">Name</label>
+                  <div class="col-8">
+                          <p class="font-weight-bold cd">{{(profile | async)?.displayName | titlecase }}</p>
+                  </div>
+                </div><hr>
+                <div class="form-inline row">
+                  <label for="example-search-input" class="col-4 ">Email</label>
+                  <div class="col-8">
+                          <p class="font-weight-bold cd" >{{(profile | async)?.email}} </p>
+                  </div>
+                </div>
+                <hr>
+                <div class="form-inline row">
+                  <label for="example-email-input" class="col-4 ">Brokerage</label>
+                  <div class="col-8">
+                          <p class="font-weight-bold cd">{{(profile | async)?.brokerage}}</p>
+                 </div>
+                 </div>
+                <hr>
+                
+                <div class="form-inline row">
+                    <label for="example-search-input" class="col-4 ">Phone number</label>
+                    <div class="col-8">
+                            <p class="font-weight-bold cd" >{{(profile | async)?.phonenumber}} </p>
+                    </div>
+                  </div>
+                <hr>
+                <div class="form-group row">
+                  <label for="example-search-input" class="col-7 col-form-label">Payment Info:<span>Not set up yet</span> </label>
+                  <div class="col-5">
+                    <button type="button" class="btn btn1">Set Up</button>
+                  </div>
+                </div>
+                      
+                      
+                             
+                     
+                  
+                </div>
+                
+    
+  </div>
+
+
